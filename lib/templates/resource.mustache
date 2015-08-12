@@ -1,0 +1,8 @@
+	
+    /**
+     * {{ description }}
+     **/
+    @RequestMapping(value = "{{{ attributes.uriTemplate }}}", method = RequestMethod.{{ method }})
+    public {{{responseClassName}}} {{#fn.camelCase}}{{{ name }}}{{/fn.camelCase}}({{> pathparameters }}{{> bodyparameters }}) {
+    	return {{apiSpecName}}.{{#fn.camelCase}}{{{ name }}}{{/fn.camelCase}}({{>svcpathparameters}}{{>svcbodyparameters}});
+    }

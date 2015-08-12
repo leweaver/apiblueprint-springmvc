@@ -1,0 +1,10 @@
+{{> javafileheader }}
+public interface {{apiSpecClassName}} {
+
+    {{#resources}}
+        {{#actions}}
+            {{> resourceprototype}}
+        {{/actions}}
+    {{/resources}}
+
+}

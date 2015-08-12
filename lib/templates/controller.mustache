@@ -1,0 +1,17 @@
+{{> javafileheader }}
+@RestController
+public class {{controllerClassName}} {
+
+    private {{apiSpecClassName}} {{apiSpecName}};
+
+    @Autowired
+    public {{controllerClassName}}({{apiSpecClassName}} {{apiSpecName}}) {
+        this.{{apiSpecName}} = {{apiSpecName}};
+    }
+    {{#resources}}
+        {{#actions}}
+            {{> resource}}
+        {{/actions}}
+    {{/resources}}
+
+}

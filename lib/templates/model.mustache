@@ -1,0 +1,17 @@
+{{> javafileheader }}
+public class {{modelClassName}} {
+
+	{{#fields}}
+	private {{#fn.maptype}}{{type}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
+	{{/fields}}
+
+	{{#fields}}
+	public {{#fn.maptype}}{{type}}{{/fn.maptype}} get{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}() {
+		return {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
+	}
+	public void set{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}({{#fn.maptype}}{{type}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}}) {
+		this.{{#fn.camelCase}}{{name}}{{/fn.camelCase}} = {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
+	}
+
+	{{/fields}}
+}
