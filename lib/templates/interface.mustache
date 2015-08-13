@@ -1,6 +1,9 @@
 package {{ package }}.service;
 
 import {{ package }}.model.*;
+{{#extraImports}}
+import {{.}};
+{{/extraImports}}
 
 {{> header }}
 public interface {{apiSpecClassName}} {

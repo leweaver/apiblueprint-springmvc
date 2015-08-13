@@ -4,6 +4,9 @@ import {{ package }}.model.*;
 import {{ package }}.service.{{apiSpecClassName}};
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
+{{#extraImports}}
+import {{.}};
+{{/extraImports}}
 
 {{> header }}
 @RestController
