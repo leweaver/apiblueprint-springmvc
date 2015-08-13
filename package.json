@@ -1,6 +1,6 @@
 {
   "name": "apiblueprint-springmvc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Generates SpringMVC Controllers, Models and Service Interfaces from an apiblueprint file.",
   "main": "lib/index.js",
   "scripts": {

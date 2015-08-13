@@ -1,4 +1,11 @@
-{{> javafileheader }}
+package {{ package }}.controller;
+
+import {{ package }}.model.*;
+import {{ package }}.service.{{apiSpecClassName}};
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+{{> header }}
 @RestController
 public class {{controllerClassName}} {
 
