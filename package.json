@@ -2,6 +2,8 @@
   "name": "apiblueprint-springmvc",
   "version": "0.1.0",
   "description": "Generates SpringMVC Controllers, Models and Service Interfaces from an apiblueprint file.",
+  "homepage": "https://github.com/ransico/apiblueprint-springmvc",
+  "repository": "git@github.com:ransico/apiblueprint-springmvc.git",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
