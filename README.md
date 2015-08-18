@@ -77,6 +77,11 @@ Default: []
 
 An array of model names that should not have java files created for them, in the models directory. This is useful if you do not want to generate files for some types that are defined in the apib (foe example, they are defined already in the java project elsewhere)
 
+#### options.flattenParentClasses
+Default: false
+
+If true, instead of using class inheritance, models will be flattened to contain all parent model fields.
+
 ## Writing Effective APIB
 
 ### Defining Types

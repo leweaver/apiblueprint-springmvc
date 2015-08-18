@@ -1,7 +1,7 @@
 package {{ package }}.model;
 
 {{> header }}
-public class {{modelClassName}} {
+public class {{modelClassName}} {{#modelSubClassName}}extends {{modelSubClassName}}{{/modelSubClassName}} {
 
 	{{#fields}}
 	private {{#fn.maptype}}{{type}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
