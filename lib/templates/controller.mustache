@@ -9,7 +9,8 @@ import {{.}};
 {{/extraImports}}
 
 {{> header }}
-@RestController
+@RestController{{#metadata.API_PREFIX}}
+@RequestMapping("{{{metadata.API_PREFIX}}}"){{/metadata.API_PREFIX}}
 public class {{controllerClassName}} {
 
     private {{apiSpecClassName}} {{apiSpecName}};
