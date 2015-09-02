@@ -1,1 +1,1 @@
-{{#parameters}}{{__delim}}{{#__showAnno}}@{{__annotation}}(value="{{name}}"{{^required}}, required=false{{#__defaultValue}}, defaultValue="{{__defaultValue}}"{{/__defaultValue}}{{/required}}) {{/__showAnno}}{{#fn.maptype}}{{{type}}}{{/fn.maptype}} {{name}}{{/parameters}}
+{{#parameters}}{{__delim}}{{#__showParamAnno}}{{>pathparamanno}} {{/__showParamAnno}}{{#__showCustomAnno}}@{{__annotation}} {{/__showCustomAnno}}{{#fn.maptype}}{{{type}}}{{/fn.maptype}} {{name}}{{/parameters}}

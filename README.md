@@ -82,6 +82,46 @@ Default: false
 
 If true, instead of using class inheritance, models will be flattened to contain all parent model fields.
 
+#### options.resourceModifiers
+Default: []
+
+An array of objects that you can use to add extra annotations, or parameters to a controller method.
+
+Each array entry contains a matching rule (exact match or regular expression) to determine which controller methods should have the modifier applied. The method name against which the rule matches is in the format _ControllerName.methodName_
+
+The modifier itself can apply an annotation to the method itself, or add (optionally) annotated parameters to the method signature (either at the beginning, or end, of the parameter list.)
+
+The modifier definition is as follows: 
+
+```javascript
+{
+    pattern: /MyController\..+/,
+    methodAnnotations: ['@AnnoOne', '@AnnoTwo("someArg")'],
+    prependedParameters: [ { type: 'HttpServletRequest', name: 'prefixedParam' } ],
+    appendedParameters: [ { annotation: '@NotNull', type: 'HttpServletResponse', name: 'suffixedParam' } ]
+}
+```
+
+This would result in the following output (assuming it matched a method with a single parameter, _original_)
+
+```java
+@AnnoOne
+@AnnoTwo("someArg")
+@RequestMapping("/someMethod{original}")
+public ReturnObject someMethod(HttpServletRequest prefixedParam, @PathVariable String original, @NotNull HttpServletResponse suffixedParam) {
+    return delegateService.someMethod(prefixedParam, original, suffixedParam);
+}
+```
+
+_pattern_ is either a string (for exact match) or a regular expression.
+
+_methodAnnotations_ contains a list of strings; each which is inserted verbatim above the method definiton.
+
+_prependedParameters_ contains a list of objects. Mandatory fields are _type_ and _name_ ; however annotation is optional.
+
+_appendedParameters_ contains a list of objects. Mandatory fields are _type_ and _name_ ; however annotation is optional.
+
+
 ## Writing Effective APIB
 
 ### Defining Types
