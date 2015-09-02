@@ -1,6 +1,6 @@
 {
   "name": "apiblueprint-springmvc",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generates SpringMVC Controllers, Models and Service Interfaces from an apiblueprint file.",
   "homepage": "https://github.com/ransico/apiblueprint-springmvc",
   "repository": "git@github.com:ransico/apiblueprint-springmvc.git",
