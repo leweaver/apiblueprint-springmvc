@@ -1,17 +1,21 @@
 package {{ package }}.model;
 
+{{#extraImports}}
+import {{.}};
+{{/extraImports}}
+
 {{> header }}
 public class {{modelClassName}} {{#modelSubClassName}}extends {{modelSubClassName}}{{/modelSubClassName}} {
 
 	{{#fields}}
-	private {{#fn.maptype}}{{type}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
+	private {{#fn.maptype}}{{{type}}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
 	{{/fields}}
 
 	{{#fields}}
-	public {{#fn.maptype}}{{type}}{{/fn.maptype}} get{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}() {
+	public {{#fn.maptype}}{{{type}}}{{/fn.maptype}} get{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}() {
 		return {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
 	}
-	public void set{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}({{#fn.maptype}}{{type}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}}) {
+	public void set{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}({{#fn.maptype}}{{{type}}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}}) {
 		this.{{#fn.camelCase}}{{name}}{{/fn.camelCase}} = {{#fn.camelCase}}{{name}}{{/fn.camelCase}};
 	}
 
