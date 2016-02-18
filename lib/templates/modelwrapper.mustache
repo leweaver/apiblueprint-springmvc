@@ -1,0 +1,33 @@
+package {{ package }}.model;
+
+{{#extraImports}}
+import {{.}};
+{{/extraImports}}
+
+{{> header }}
+public class {{modelClassName}} {{#modelSubClassName}}extends {{modelSubClassName}}{{/modelSubClassName}} {
+
+    private final {{modelProperties.wrapsClass}} wrapped;
+
+    public {{modelClassName}}() {
+        this.wrapped = new {{modelProperties.wrapsClass}}();
+    }
+
+    public {{modelClassName}}({{modelProperties.wrapsClass}} wrapped) {
+        this.wrapped = wrapped;
+    }
+
+    public {{modelProperties.wrapsClass}} getWrapped() {
+        return wrapped;
+    }
+
+    {{#fields}}
+    public {{#fn.maptype}}{{{type}}}{{/fn.maptype}} get{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}() {
+        return wrapped.get{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}();
+    }
+    public void set{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}({{#fn.maptype}}{{{type}}}{{/fn.maptype}} {{#fn.camelCase}}{{name}}{{/fn.camelCase}}) {
+        wrapped.set{{#fn.pascalCase}}{{name}}{{/fn.pascalCase}}({{#fn.camelCase}}{{name}}{{/fn.camelCase}});
+    }
+
+    {{/fields}}
+}
