@@ -168,16 +168,50 @@ Lastly, you will need to define the types - which fields they have etc. Do this 
 # Data Structures
 
 ## Widget
-Optional Description of the class
-
-### Properties
 + some: `sample` (string) - some description of what the field is..
+```
+
+### Additional Data Structure Options
+
+This library supports adding additional __options__ to the object description, which control how the model is rendered into a source file. If you add options, there must be at least 1 line of text in the description, before the options themselves. 
+
+The following options are supported:
+
+#### wrapsClass
+Instead of generating a POJO model class, will create a wrapper around the given class. Each get/set method on the generated class will simply pass-through to an identically named method on the wrapped class instance.
+
+The value of the property is the name of the class that the generated model with _wrap_.
+
+```markdown
+# Data Structures
+
+## Widget
+Parameters:
++ wrapsClass: com.example.model.SomeModel
+
+# Properties
++ id: 1 (number) - description
+```
+
+#### flattenParentClasses
+Override the global option _flattenParentClasses_, for this class. Valid values: true or false.
+
+```markdown
+# Data Structures
+
+## Widget
+Parameters:
++ flattenParentClasses: true
+
+# Properties
++ id: 1 (number) - description
 ```
 
 ## Roadmap
 Some things I would like to add
 
 * Add ability to instead of directly writing files, return a result array of [{ fileName: 'filename', content: 'content', encoding: 'utf8' }]
+* Better handling of Model inheritance; instead of redefining fields, use `extends`
 
 ## Contributing
 Pull requests are welcome!
