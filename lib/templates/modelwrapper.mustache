@@ -7,17 +7,17 @@ import {{.}};
 {{> header }}
 public class {{modelClassName}} {{#modelSubClassName}}extends {{modelSubClassName}}{{/modelSubClassName}} {
 
-    private final {{modelProperties.wrapsClass}} wrapped;
+    private final {{modelOptions.wrapsClass}} wrapped;
 
     public {{modelClassName}}() {
-        this.wrapped = new {{modelProperties.wrapsClass}}();
+        this.wrapped = new {{modelOptions.wrapsClass}}();
     }
 
-    public {{modelClassName}}({{modelProperties.wrapsClass}} wrapped) {
+    public {{modelClassName}}({{modelOptions.wrapsClass}} wrapped) {
         this.wrapped = wrapped;
     }
 
-    public {{modelProperties.wrapsClass}} getWrapped() {
+    public {{modelOptions.wrapsClass}} getWrapped() {
         return wrapped;
     }
 

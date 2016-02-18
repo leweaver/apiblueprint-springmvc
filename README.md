@@ -164,18 +164,49 @@ Creates a new Widget.
 
 Lastly, you will need to define the types - which fields they have etc. Do this at the end of the markdown file, in the Data Structures section.
 
-__Note__: there is an extension to the standard MSON Type definition; we can add __options__ to the object description, which control how the model is rendered into a source file. If you add options, there must be at least 1 line of text in the description, before the options themselves. Currently we only read a single option: `wrapsClass`, which will create a wrapper around the given class, rather than a POJO model. This is show in the below example.
-
 ```markdown
+# Data Structures
+
+## Widget
++ some: `sample` (string) - some description of what the field is..
+```
+
+### Additional Data Structure Options
+
+This library supports adding additional __options__ to the object description, which control how the model is rendered into a source file. If you add options, there must be at least 1 line of text in the description, before the options themselves. 
+
+The following options are supported:
+
+#### wrapsClass
+Instead of generating a POJO model class, will create a wrapper around the given class. Each get/set method on the generated class will simply pass-through to an identically named method on the wrapped class instance.
+
+The value of the property is the name of the class that the generated model with _wrap_.
+
+```
 # Data Structures
 
 ## Widget
 Parameters:
 + wrapsClass: com.example.model.SomeModel
 
-### Properties
-+ some: `sample` (string) - some description of what the field is..
+# Properties
++ id: 1 (number) - description
+```markdown
+
+#### flattenParentClasses
+Override the global option _flattenParentClasses_, for this class. Valid values: true or false.
+
 ```
+# Data Structures
+
+## Widget
+Parameters:
++ flattenParentClasses: true
+
+# Properties
++ id: 1 (number) - description
+```markdown
+
 
 ## Roadmap
 Some things I would like to add
