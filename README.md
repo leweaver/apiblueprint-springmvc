@@ -6,7 +6,7 @@ The aim of this project is to make the api specification an integral part of the
 ## Getting Started
 This generator assumes that you have an understanding of [API Blueprint](https://apiblueprint.org), so that you can write apib files for this plugin to process!
 
-I would recommend that you also check out the [Grunt task](grunt-apiblueprint-springmvc) that wraps this generator into a [Grunt](http://gruntjs.com/) task.
+I would recommend that you also check out the [Grunt task](https://github.com/ransico/grunt-apiblueprint-springmvc) that wraps this generator into a [Grunt](http://gruntjs.com/) task.
 
 ## Generator
 The generator will parse the markdown, creating one java controller for each api __group__. This controller will contain fully annotated, hard typed methods for each API request in your specification.
